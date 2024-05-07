@@ -2,7 +2,8 @@
   <%= javascript_tag "backend/spree_product_assembly" %>
 <%- end %>
 
-
+<%= render :partial => 'spree/admin/shared/product_tabs',
+  :locals => {:current => "Parts"} %>
 
 <div id="product_parts" data-product-slug="<%= product.slug %>">
   <%= render :partial => "parts_table", :locals => {:parts => @parts} %>
