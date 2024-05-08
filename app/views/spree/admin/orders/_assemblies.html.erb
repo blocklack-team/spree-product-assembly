@@ -38,7 +38,7 @@
               <td class="item-total align-center">
                 <%= item.display_amount.to_html %>
               </td>
-              <td class="cart-item-delete actions" data-hook="cart_item_delete">
+              <td class="cart-item-delete actions col-1" data-hook="cart_item_delete">
                 <% unless item.any_units_shipped? %>
                   <% if can? :update, item %>
                   <%= link_to_with_icon 'arrow-left', Spree.t('cancel'), '#', :class => 'cancel-line-item btn btn-default btn-sm', :no_text => true, :data => {:action => 'cancel'}, :title => Spree.t('actions.cancel'), :style => 'display: none' %>
