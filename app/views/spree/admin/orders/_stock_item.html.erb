@@ -13,6 +13,8 @@
       <% if item.part && item.line_item %>
         <strong><%= Spree.t(:part_of_bundle, sku: item.product.sku) %></strong>
       <% end %>
+
+      <%= "(" + item.product.variant.options_text + ")" if item.product.variant.present? && item.product.variant.option_values.any? %>
     </td>
 
     <td class="item-price text-center"><%= item.line_item.single_money.to_html %></td>
