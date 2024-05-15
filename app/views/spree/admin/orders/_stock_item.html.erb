@@ -17,7 +17,7 @@
       <% end %>     
     </td>
 
-    <td class="item-price text-center"><%= item.variant.prices.amount.to_html %></td>
+    <td class="item-price text-center"><%= item.variant.prices.find_by(variant_id: item.variant.id).amount.to_html %></td>
 
     <td class="item-qty-show text-center">
       <% item.states.each do |state,count| %>
