@@ -32,7 +32,7 @@
     <% end %>
 
     <td class="item-total text-center">
-      <%= shipment_price(item.line_item, item.quantity) %>
+      <%= number_to_currency(item.variant.prices.find_by(variant_id: item.variant.id).amount * item.quantity) %>
     </td>
 
     <td class="cart-item-delete actions actions-3 text-center col-1" data-hook="cart_item_delete">
